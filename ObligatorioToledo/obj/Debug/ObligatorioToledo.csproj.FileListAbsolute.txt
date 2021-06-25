@@ -1,0 +1,12 @@
+C:\Users\VIOT\Desktop\Analista Programador\programación 3\ObligatorioToledo\ObligatorioToledo\ObligatorioToledo\bin\Debug\ObligatorioToledo.exe.config
+C:\Users\VIOT\Desktop\Analista Programador\programación 3\ObligatorioToledo\ObligatorioToledo\ObligatorioToledo\bin\Debug\ObligatorioToledo.exe
+C:\Users\VIOT\Desktop\Analista Programador\programación 3\ObligatorioToledo\ObligatorioToledo\ObligatorioToledo\bin\Debug\ObligatorioToledo.pdb
+C:\Users\VIOT\Desktop\Analista Programador\programación 3\ObligatorioToledo\ObligatorioToledo\ObligatorioToledo\bin\Debug\EntityFramework.dll
+C:\Users\VIOT\Desktop\Analista Programador\programación 3\ObligatorioToledo\ObligatorioToledo\ObligatorioToledo\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\VIOT\Desktop\Analista Programador\programación 3\ObligatorioToledo\ObligatorioToledo\ObligatorioToledo\bin\Debug\EntityFramework.xml
+C:\Users\VIOT\Desktop\Analista Programador\programación 3\ObligatorioToledo\ObligatorioToledo\ObligatorioToledo\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\VIOT\Desktop\Analista Programador\programación 3\ObligatorioToledo\ObligatorioToledo\ObligatorioToledo\obj\Debug\ObligatorioToledo.csprojAssemblyReference.cache
+C:\Users\VIOT\Desktop\Analista Programador\programación 3\ObligatorioToledo\ObligatorioToledo\ObligatorioToledo\obj\Debug\ObligatorioToledo.csproj.CoreCompileInputs.cache
+C:\Users\VIOT\Desktop\Analista Programador\programación 3\ObligatorioToledo\ObligatorioToledo\ObligatorioToledo\obj\Debug\ObligatorioToledo.csproj.CopyComplete
+C:\Users\VIOT\Desktop\Analista Programador\programación 3\ObligatorioToledo\ObligatorioToledo\ObligatorioToledo\obj\Debug\ObligatorioToledo.exe
+C:\Users\VIOT\Desktop\Analista Programador\programación 3\ObligatorioToledo\ObligatorioToledo\ObligatorioToledo\obj\Debug\ObligatorioToledo.pdb

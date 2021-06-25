@@ -1,0 +1,6 @@
+C:\Users\VIOT\Desktop\Analista Programador\programación 3\ObligatorioToledo\ObligatorioToledo\CommonSolution\bin\Debug\CommonSolution.dll
+C:\Users\VIOT\Desktop\Analista Programador\programación 3\ObligatorioToledo\ObligatorioToledo\CommonSolution\bin\Debug\CommonSolution.pdb
+C:\Users\VIOT\Desktop\Analista Programador\programación 3\ObligatorioToledo\ObligatorioToledo\CommonSolution\obj\Debug\CommonSolution.csprojAssemblyReference.cache
+C:\Users\VIOT\Desktop\Analista Programador\programación 3\ObligatorioToledo\ObligatorioToledo\CommonSolution\obj\Debug\CommonSolution.csproj.CoreCompileInputs.cache
+C:\Users\VIOT\Desktop\Analista Programador\programación 3\ObligatorioToledo\ObligatorioToledo\CommonSolution\obj\Debug\CommonSolution.dll
+C:\Users\VIOT\Desktop\Analista Programador\programación 3\ObligatorioToledo\ObligatorioToledo\CommonSolution\obj\Debug\CommonSolution.pdb

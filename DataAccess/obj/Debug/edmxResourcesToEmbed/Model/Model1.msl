@@ -1,0 +1,87 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="BDToledoModelStoreContainer" CdmEntityContainer="BDToledoEntities">
+    <EntitySetMapping Name="Cuadrilla">
+      <EntityTypeMapping TypeName="BDToledoModel.Cuadrilla">
+        <MappingFragment StoreEntitySet="Cuadrilla">
+          <ScalarProperty Name="NroDeCuadrilla" ColumnName="NroDeCuadrilla" />
+          <ScalarProperty Name="NroDeZona" ColumnName="NroDeZona" />
+          <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+          <ScalarProperty Name="Encargado" ColumnName="Encargado" />
+          <ScalarProperty Name="CantidadDePeones" ColumnName="CantidadDePeones" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="HistorialReclamo">
+      <EntityTypeMapping TypeName="BDToledoModel.HistorialReclamo">
+        <MappingFragment StoreEntitySet="HistorialReclamo">
+          <ScalarProperty Name="NroDeHistorial" ColumnName="NroDeHistorial" />
+          <ScalarProperty Name="NroDeReclamo" ColumnName="NroDeReclamo" />
+          <ScalarProperty Name="NombreDeUsuario" ColumnName="NombreDeUsuario" />
+          <ScalarProperty Name="Observacion" ColumnName="Observacion" />
+          <ScalarProperty Name="Longitud" ColumnName="Longitud" />
+          <ScalarProperty Name="Latitud" ColumnName="Latitud" />
+          <ScalarProperty Name="FechaDeIngreso" ColumnName="FechaDeIngreso" />
+          <ScalarProperty Name="EstadoDelReclamo" ColumnName="EstadoDelReclamo" />
+          <ScalarProperty Name="FechaDeCambioDeEstado" ColumnName="FechaDeCambioDeEstado" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Reclamo">
+      <EntityTypeMapping TypeName="BDToledoModel.Reclamo">
+        <MappingFragment StoreEntitySet="Reclamo">
+          <ScalarProperty Name="NroDeReclamo" ColumnName="NroDeReclamo" />
+          <ScalarProperty Name="NombreDeUsuario" ColumnName="NombreDeUsuario" />
+          <ScalarProperty Name="NroDeZona" ColumnName="NroDeZona" />
+          <ScalarProperty Name="NroDeTipoDeReclamo" ColumnName="NroDeTipoDeReclamo" />
+          <ScalarProperty Name="Observacion" ColumnName="Observacion" />
+          <ScalarProperty Name="Longitud" ColumnName="Longitud" />
+          <ScalarProperty Name="Latitud" ColumnName="Latitud" />
+          <ScalarProperty Name="FechaDeIngreso" ColumnName="FechaDeIngreso" />
+          <ScalarProperty Name="EstadoDelReclamo" ColumnName="EstadoDelReclamo" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TipoDeReclamo">
+      <EntityTypeMapping TypeName="BDToledoModel.TipoDeReclamo">
+        <MappingFragment StoreEntitySet="TipoDeReclamo">
+          <ScalarProperty Name="NroDeTipoDeReclamo" ColumnName="NroDeTipoDeReclamo" />
+          <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+          <ScalarProperty Name="Descripción" ColumnName="Descripción" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="UbicacionZona">
+      <EntityTypeMapping TypeName="BDToledoModel.UbicacionZona">
+        <MappingFragment StoreEntitySet="UbicacionZona">
+          <ScalarProperty Name="NroUbicacionZona" ColumnName="NroUbicacionZona" />
+          <ScalarProperty Name="NroDeZona" ColumnName="NroDeZona" />
+          <ScalarProperty Name="Latitud" ColumnName="Latitud" />
+          <ScalarProperty Name="Longitud" ColumnName="Longitud" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Usuario">
+      <EntityTypeMapping TypeName="BDToledoModel.Usuario">
+        <MappingFragment StoreEntitySet="Usuario">
+          <ScalarProperty Name="NombreDeUsuario" ColumnName="NombreDeUsuario" />
+          <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+          <ScalarProperty Name="Apellido" ColumnName="Apellido" />
+          <ScalarProperty Name="Telefono" ColumnName="Telefono" />
+          <ScalarProperty Name="Contraseña" ColumnName="Contraseña" />
+          <ScalarProperty Name="CorreoElectronico" ColumnName="CorreoElectronico" />
+          <ScalarProperty Name="Funcionario" ColumnName="Funcionario" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Zona">
+      <EntityTypeMapping TypeName="BDToledoModel.Zona">
+        <MappingFragment StoreEntitySet="Zona">
+          <ScalarProperty Name="NroDeZona" ColumnName="NroDeZona" />
+          <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+          <ScalarProperty Name="Color" ColumnName="Color" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>
