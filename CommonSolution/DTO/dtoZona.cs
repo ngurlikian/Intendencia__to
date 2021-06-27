@@ -14,6 +14,7 @@ namespace CommonSolution.DTO
 
         public List<dtoCuadrilla> colDtoCuadrilla;
         public List<dtoReclamo> colDtoReclamo;
+        public string Estado;
         public  List<dtoUbicacionZona> colDtoUbicacionZona { get; set; }
     }
 }

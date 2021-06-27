@@ -42,6 +42,7 @@ namespace CommonSolution.DTO
         public string CorreoElectronico { get; set; }
 
         public string Funcionario;
+        public string Estado;
 
         public List<dtoReclamo> coldtoReclamo;
     }

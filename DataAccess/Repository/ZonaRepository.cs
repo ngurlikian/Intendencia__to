@@ -1,4 +1,5 @@
-﻿using CommonSolution.DTO;
+﻿using CommonSolution.Constantes;
+using CommonSolution.DTO;
 using DataAccess.Mapper;
 using DataAccess.Model;
 using System;
@@ -63,7 +64,7 @@ namespace DataAccess.Repository
 
                         if (EstaZona != null)
                         {
-                            context.Zona.Remove(EstaZona);
+                            EstaZona.Estado = Estado.ESTADO_INACTIVO;
                             context.SaveChanges();
                             trann.Commit();
                         }

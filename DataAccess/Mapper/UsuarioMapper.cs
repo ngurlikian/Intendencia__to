@@ -21,6 +21,7 @@ namespace DataAccess.Mapper
             entity.Funcionario = dto.Funcionario;
             entity.CorreoElectronico = dto.CorreoElectronico;
             entity.Contraseña = dto.Contraseña;
+            entity.Estado = dto.Estado;
             return entity;
         }
 

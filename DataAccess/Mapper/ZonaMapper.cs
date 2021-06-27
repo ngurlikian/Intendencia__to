@@ -16,6 +16,7 @@ namespace DataAccess.Mapper
             entity.NroDeZona = dto.NroDeZona;
             entity.Nombre = dto.Nombre;
             entity.Color = dto.Color;
+            entity.Estado = dto.Estado;
             entity.Cuadrilla = this.mapDtoListCuadrillaToEntity(dto.colDtoCuadrilla);
             entity.Reclamo = this.mapDtoListReclamoToEntity(dto.colDtoReclamo);
             entity.UbicacionZona = this.mapDtoListUbicacionZonaToEntity(dto.colDtoUbicacionZona);

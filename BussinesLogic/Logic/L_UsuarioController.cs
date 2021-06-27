@@ -1,4 +1,5 @@
-﻿using CommonSolution.DTO;
+﻿using CommonSolution.Constantes;
+using CommonSolution.DTO;
 using DataAccess.Persistencia;
 using System;
 using System.Collections.Generic;
@@ -23,6 +24,7 @@ namespace BussinesLogic.Logic
             if (colErrores.Count() == 0)
             {
                 dto.Funcionario = "No";
+                dto.Estado=Estado.ESTADO_ACTIVO;
                 this._Repository.getUsuarioRepository().AgregarUsuarioRepository(dto);
             }
             return colErrores;

@@ -1,4 +1,5 @@
-﻿using CommonSolution.DTO;
+﻿using CommonSolution.Constantes;
+using CommonSolution.DTO;
 using DataAccess.Persistencia;
 using System;
 using System.Collections.Generic;
@@ -22,10 +23,12 @@ namespace BussinesLogic.Logic
             List<string> colErrores = new List<string>();
             if (colErrores.Count() == 0)
             {
+                dto.Estado = Estado.ESTADO_ACTIVO;
                 this._Repository.getCuadrillaRepository().AgregarCuadrillaRepository(dto);
             }
             return colErrores;
         }
+
 
         public List<string> ValidarBorrado(int nrocuadrilla)
         {
@@ -37,6 +40,11 @@ namespace BussinesLogic.Logic
             }
 
             return colErrores;
+        }
+
+        public List<dtoCuadrilla> getCuadrilla()
+        {
+            return this._Repository.getCuadrillaRepository().getCuadrilla();
         }
 
         public List<string> BorrarCuadrilla(int nrocuadrilla)

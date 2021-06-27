@@ -1,4 +1,5 @@
-﻿using CommonSolution.DTO;
+﻿using CommonSolution.Constantes;
+using CommonSolution.DTO;
 using DataAccess.Persistencia;
 using System;
 using System.Collections.Generic;
@@ -22,6 +23,7 @@ namespace BussinesLogic.Logic
             List<string> colErrores = new List<string>();
             if (colErrores.Count() == 0)
             {
+                dto.Estado = Estado.ESTADO_ACTIVO;
                 this._Repository.getZonaRepository().AgregarZonaRepository(dto);
             }
             return colErrores;

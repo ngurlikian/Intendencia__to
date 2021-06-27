@@ -1,4 +1,5 @@
-﻿using CommonSolution.DTO;
+﻿using CommonSolution.Constantes;
+using CommonSolution.DTO;
 using DataAccess.Mapper;
 using DataAccess.Model;
 using System;
@@ -51,6 +52,7 @@ namespace DataAccess.Repository
             }
         }
 
+     
         public void BorrarUsuarioRepository(string nombredeusuario)
         {
             using (BDToledoEntities context = new BDToledoEntities())
@@ -63,7 +65,7 @@ namespace DataAccess.Repository
 
                         if (EsteUsuario != null)
                         {
-                            context.Usuario.Remove(EsteUsuario);
+                            EsteUsuario.Estado = Estado.ESTADO_INACTIVO;
                             context.SaveChanges();
                             trann.Commit();
                         }

@@ -29,5 +29,6 @@ namespace CommonSolution.DTO
         [DisplayName("Cantidad de Peones:")]
         [Required(ErrorMessage = "La Cantidad de Peones es requerida")]
         public int CantidadDePeones { get; set; }
+        public string Estado;
     }
 }

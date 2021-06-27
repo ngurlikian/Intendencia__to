@@ -27,6 +27,7 @@ namespace DataAccess.Model
         public string Contraseña { get; set; }
         public string CorreoElectronico { get; set; }
         public string Funcionario { get; set; }
+        public string Estado { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Reclamo> Reclamo { get; set; }

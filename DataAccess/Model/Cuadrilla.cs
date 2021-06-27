@@ -19,6 +19,7 @@ namespace DataAccess.Model
         public string Nombre { get; set; }
         public string Encargado { get; set; }
         public int CantidadDePeones { get; set; }
+        public string Estado { get; set; }
     
         public virtual Zona Zona { get; set; }
     }

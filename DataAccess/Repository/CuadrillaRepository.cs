@@ -1,4 +1,5 @@
-﻿using CommonSolution.DTO;
+﻿using CommonSolution.Constantes;
+using CommonSolution.DTO;
 using DataAccess.Mapper;
 using DataAccess.Model;
 using System;
@@ -51,6 +52,19 @@ namespace DataAccess.Repository
             }
         }
 
+        public List<dtoCuadrilla> getCuadrilla()
+        {
+            List<dtoCuadrilla> colDtoCuadrilla = new List<dtoCuadrilla>();
+
+            using (BDToledoEntities context = new BDToledoEntities())
+            {
+                List<Cuadrilla> colCuadrilla = context.Cuadrilla.AsNoTracking().Where(w => w.Estado == Estado.ESTADO_ACTIVO).Select(s => s).ToList();
+                colDtoCuadrilla = this.cuadrillaMapper.MapToDto(colCuadrilla);
+            }
+
+            return colDtoCuadrilla;
+        }
+
         public void BorrarCuadrillaRepository(int nrocuadrilla)
         {
             using (BDToledoEntities context = new BDToledoEntities())
@@ -63,7 +77,7 @@ namespace DataAccess.Repository
 
                         if (EstaCuadrilla != null)
                         {
-                            context.Cuadrilla.Remove(EstaCuadrilla);
+                            EstaCuadrilla.Estado = Estado.ESTADO_INACTIVO;
                             context.SaveChanges();
                             trann.Commit();
                         }

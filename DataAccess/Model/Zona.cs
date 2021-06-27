@@ -25,6 +25,7 @@ namespace DataAccess.Model
         public int NroDeZona { get; set; }
         public string Nombre { get; set; }
         public string Color { get; set; }
+        public string Estado { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Cuadrilla> Cuadrilla { get; set; }

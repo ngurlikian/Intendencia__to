@@ -3,8 +3,6 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.31005.135
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ObligatorioToledo", "ObligatorioToledo\ObligatorioToledo.csproj", "{85479049-8D1A-4AF8-9423-5250968288E2}"
-EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "0.Presentacion", "0.Presentacion", "{3BFF18C3-ED9E-416E-AD59-1C86D48F8309}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "1.Service", "1.Service", "{B8791885-EBD7-4926-8ED0-6A5F6A3DF7B0}"
@@ -21,7 +19,9 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataAccess", "DataAccess\Da
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CommonSolution", "CommonSolution\CommonSolution.csproj", "{0A11BE8B-B25A-4989-8B2E-608BA791383E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MVCToledo", "MVCToledo\MVCToledo.csproj", "{ACCF2B9A-7B51-4D75-88F5-806B65446600}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Funcionarios", "MVCToledo\Funcionarios.csproj", "{ACCF2B9A-7B51-4D75-88F5-806B65446600}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Usuarios", "Usuarios\Usuarios.csproj", "{39431C27-26D7-4E9B-B304-76382BDE62D4}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -29,10 +29,6 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{85479049-8D1A-4AF8-9423-5250968288E2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{85479049-8D1A-4AF8-9423-5250968288E2}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{85479049-8D1A-4AF8-9423-5250968288E2}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{85479049-8D1A-4AF8-9423-5250968288E2}.Release|Any CPU.Build.0 = Release|Any CPU
 		{344348A8-C46B-45B4-8E0E-789E8B82D6FC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{344348A8-C46B-45B4-8E0E-789E8B82D6FC}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{344348A8-C46B-45B4-8E0E-789E8B82D6FC}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -49,16 +45,20 @@ Global
 		{ACCF2B9A-7B51-4D75-88F5-806B65446600}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{ACCF2B9A-7B51-4D75-88F5-806B65446600}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{ACCF2B9A-7B51-4D75-88F5-806B65446600}.Release|Any CPU.Build.0 = Release|Any CPU
+		{39431C27-26D7-4E9B-B304-76382BDE62D4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{39431C27-26D7-4E9B-B304-76382BDE62D4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{39431C27-26D7-4E9B-B304-76382BDE62D4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{39431C27-26D7-4E9B-B304-76382BDE62D4}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
-		{85479049-8D1A-4AF8-9423-5250968288E2} = {3BFF18C3-ED9E-416E-AD59-1C86D48F8309}
 		{344348A8-C46B-45B4-8E0E-789E8B82D6FC} = {ED84E523-B7F6-49CF-B11C-3C53517A738F}
 		{AE270C9A-E6A1-4CDA-98F3-0BA1FF146770} = {DFFC6BA4-04FC-400D-82E8-5F0BB6F7F6F0}
 		{0A11BE8B-B25A-4989-8B2E-608BA791383E} = {9C6D25A3-AC4A-42DD-A684-7A4CCE814369}
 		{ACCF2B9A-7B51-4D75-88F5-806B65446600} = {3BFF18C3-ED9E-416E-AD59-1C86D48F8309}
+		{39431C27-26D7-4E9B-B304-76382BDE62D4} = {3BFF18C3-ED9E-416E-AD59-1C86D48F8309}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {1B6110B5-7A4B-4191-BA02-F66653052BCF}

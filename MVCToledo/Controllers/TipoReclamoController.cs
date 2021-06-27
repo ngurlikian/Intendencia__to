@@ -15,7 +15,7 @@ namespace MVCToledo.Controllers
             return View();
         }
 
-        public ActionResult AgregarUsuario(dtoTipoDeReclamo dto)
+        public ActionResult AgregarTipoReclamo(dtoTipoDeReclamo dto)
         {
             L_TipoReclamoController tiporeclamoController = new L_TipoReclamoController();
             tiporeclamoController.AgregarTipoReclamo(dto);
