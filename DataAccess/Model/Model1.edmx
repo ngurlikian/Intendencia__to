@@ -37,10 +37,10 @@
           <Property Name="NroDeReclamo" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="NombreDeUsuario" Type="varchar" MaxLength="20" Nullable="false" />
           <Property Name="NroDeZona" Type="int" Nullable="false" />
-          <Property Name="NroDeTipoDeReclamo" Type="int" Nullable="false" />
+          <Property Name="NroDeTipoDeReclamo" Type="int" />
           <Property Name="Observacion" Type="varchar" MaxLength="100" Nullable="false" />
-          <Property Name="Longitud" Type="decimal" Precision="18" Scale="0" Nullable="false" />
-          <Property Name="Latitud" Type="decimal" Precision="18" Scale="0" Nullable="false" />
+          <Property Name="Longitud" Type="decimal" Precision="18" Scale="0" />
+          <Property Name="Latitud" Type="decimal" Precision="18" Scale="0" />
           <Property Name="FechaDeIngreso" Type="datetime" Nullable="false" />
           <Property Name="EstadoDelReclamo" Type="varchar" MaxLength="20" Nullable="false" />
         </EntityType>
@@ -96,7 +96,7 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_Reclamo_TipoDeReclamo">
-          <End Role="TipoDeReclamo" Type="Self.TipoDeReclamo" Multiplicity="1" />
+          <End Role="TipoDeReclamo" Type="Self.TipoDeReclamo" Multiplicity="0..1" />
           <End Role="Reclamo" Type="Self.Reclamo" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="TipoDeReclamo">
@@ -190,23 +190,6 @@
           <Property Name="EstadoDelReclamo" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="FechaDeCambioDeEstado" Type="DateTime" Nullable="false" Precision="3" />
         </EntityType>
-        <EntityType Name="Reclamo">
-          <Key>
-            <PropertyRef Name="NroDeReclamo" />
-          </Key>
-          <Property Name="NroDeReclamo" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="NombreDeUsuario" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="NroDeZona" Type="Int32" Nullable="false" />
-          <Property Name="NroDeTipoDeReclamo" Type="Int32" Nullable="false" />
-          <Property Name="Observacion" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="Longitud" Type="Decimal" Precision="18" Scale="0" Nullable="false" />
-          <Property Name="Latitud" Type="Decimal" Precision="18" Scale="0" Nullable="false" />
-          <Property Name="FechaDeIngreso" Type="DateTime" Nullable="false" Precision="3" />
-          <Property Name="EstadoDelReclamo" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
-          <NavigationProperty Name="TipoDeReclamo" Relationship="Self.FK_Reclamo_TipoDeReclamo" FromRole="Reclamo" ToRole="TipoDeReclamo" />
-          <NavigationProperty Name="Usuario" Relationship="BDToledoModel.FK_Reclamo_Usuario" FromRole="Reclamo" ToRole="Usuario" />
-          <NavigationProperty Name="Zona" Relationship="BDToledoModel.FK_Reclamo_Zona" FromRole="Reclamo" ToRole="Zona" />
-        </EntityType>
         <EntityType Name="TipoDeReclamo">
           <Key>
             <PropertyRef Name="NroDeTipoDeReclamo" />
@@ -214,7 +197,7 @@
           <Property Name="NroDeTipoDeReclamo" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="Nombre" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="Descripción" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
-          <NavigationProperty Name="Reclamo" Relationship="Self.FK_Reclamo_TipoDeReclamo" FromRole="TipoDeReclamo" ToRole="Reclamo" />
+          <NavigationProperty Name="Reclamo" Relationship="BDToledoModel.FK_Reclamo_TipoDeReclamo" FromRole="TipoDeReclamo" ToRole="Reclamo" />
         </EntityType>
         <EntityType Name="UbicacionZona">
           <Key>
@@ -226,33 +209,25 @@
           <Property Name="Longitud" Type="Decimal" Precision="18" Scale="0" Nullable="false" />
           <NavigationProperty Name="Zona" Relationship="BDToledoModel.FK_UbicacionZona_zona" FromRole="UbicacionZona" ToRole="Zona" />
         </EntityType>
-        <Association Name="FK_Reclamo_TipoDeReclamo">
-          <End Role="TipoDeReclamo" Type="Self.TipoDeReclamo" Multiplicity="1" />
-          <End Role="Reclamo" Type="Self.Reclamo" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="TipoDeReclamo">
-              <PropertyRef Name="NroDeTipoDeReclamo" />
-            </Principal>
-            <Dependent Role="Reclamo">
-              <PropertyRef Name="NroDeTipoDeReclamo" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
         <EntityContainer Name="BDToledoEntities" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="HistorialReclamo" EntityType="Self.HistorialReclamo" />
-          <EntitySet Name="Reclamo" EntityType="Self.Reclamo" />
           <EntitySet Name="TipoDeReclamo" EntityType="Self.TipoDeReclamo" />
           <EntitySet Name="UbicacionZona" EntityType="Self.UbicacionZona" />
-          <AssociationSet Name="FK_Reclamo_TipoDeReclamo" Association="Self.FK_Reclamo_TipoDeReclamo">
-            <End Role="TipoDeReclamo" EntitySet="TipoDeReclamo" />
-            <End Role="Reclamo" EntitySet="Reclamo" />
-          </AssociationSet>
           <EntitySet Name="Cuadrilla" EntityType="BDToledoModel.Cuadrilla" />
           <EntitySet Name="Usuario" EntityType="BDToledoModel.Usuario" />
           <EntitySet Name="Zona" EntityType="BDToledoModel.Zona" />
           <AssociationSet Name="FK_Cuadrilla_Zona" Association="BDToledoModel.FK_Cuadrilla_Zona">
             <End Role="Zona" EntitySet="Zona" />
             <End Role="Cuadrilla" EntitySet="Cuadrilla" />
+          </AssociationSet>
+          <AssociationSet Name="FK_UbicacionZona_zona" Association="BDToledoModel.FK_UbicacionZona_zona">
+            <End Role="Zona" EntitySet="Zona" />
+            <End Role="UbicacionZona" EntitySet="UbicacionZona" />
+          </AssociationSet>
+          <EntitySet Name="Reclamo" EntityType="BDToledoModel.Reclamo" />
+          <AssociationSet Name="FK_Reclamo_TipoDeReclamo" Association="BDToledoModel.FK_Reclamo_TipoDeReclamo">
+            <End Role="TipoDeReclamo" EntitySet="TipoDeReclamo" />
+            <End Role="Reclamo" EntitySet="Reclamo" />
           </AssociationSet>
           <AssociationSet Name="FK_Reclamo_Usuario" Association="BDToledoModel.FK_Reclamo_Usuario">
             <End Role="Usuario" EntitySet="Usuario" />
@@ -261,10 +236,6 @@
           <AssociationSet Name="FK_Reclamo_Zona" Association="BDToledoModel.FK_Reclamo_Zona">
             <End Role="Zona" EntitySet="Zona" />
             <End Role="Reclamo" EntitySet="Reclamo" />
-          </AssociationSet>
-          <AssociationSet Name="FK_UbicacionZona_zona" Association="BDToledoModel.FK_UbicacionZona_zona">
-            <End Role="Zona" EntitySet="Zona" />
-            <End Role="UbicacionZona" EntitySet="UbicacionZona" />
           </AssociationSet>
           </EntityContainer>
         <EntityType Name="Cuadrilla">
@@ -302,8 +273,8 @@
           <Property Name="Color" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="false" />
           <Property Name="Estado" Type="String" Nullable="false" MaxLength="1" FixedLength="false" Unicode="false" />
           <NavigationProperty Name="Cuadrilla" Relationship="BDToledoModel.FK_Cuadrilla_Zona" FromRole="Zona" ToRole="Cuadrilla" />
-          <NavigationProperty Name="Reclamo" Relationship="BDToledoModel.FK_Reclamo_Zona" FromRole="Zona" ToRole="Reclamo" />
           <NavigationProperty Name="UbicacionZona" Relationship="BDToledoModel.FK_UbicacionZona_zona" FromRole="Zona" ToRole="UbicacionZona" />
+          <NavigationProperty Name="Reclamo" Relationship="BDToledoModel.FK_Reclamo_Zona" FromRole="Zona" ToRole="Reclamo" />
         </EntityType>
         <Association Name="FK_Cuadrilla_Zona">
           <End Type="BDToledoModel.Zona" Role="Zona" Multiplicity="1" />
@@ -314,6 +285,47 @@
             </Principal>
             <Dependent Role="Cuadrilla">
               <PropertyRef Name="NroDeZona" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_UbicacionZona_zona">
+          <End Type="BDToledoModel.Zona" Role="Zona" Multiplicity="1" />
+          <End Type="BDToledoModel.UbicacionZona" Role="UbicacionZona" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Zona">
+              <PropertyRef Name="NroDeZona" />
+            </Principal>
+            <Dependent Role="UbicacionZona">
+              <PropertyRef Name="NroDeZona" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="Reclamo">
+          <Key>
+            <PropertyRef Name="NroDeReclamo" />
+          </Key>
+          <Property Name="NroDeReclamo" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="NombreDeUsuario" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="NroDeZona" Type="Int32" Nullable="false" />
+          <Property Name="NroDeTipoDeReclamo" Type="Int32" />
+          <Property Name="Observacion" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="Longitud" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="Latitud" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="FechaDeIngreso" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="EstadoDelReclamo" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="TipoDeReclamo" Relationship="BDToledoModel.FK_Reclamo_TipoDeReclamo" FromRole="Reclamo" ToRole="TipoDeReclamo" />
+          <NavigationProperty Name="Usuario" Relationship="BDToledoModel.FK_Reclamo_Usuario" FromRole="Reclamo" ToRole="Usuario" />
+          <NavigationProperty Name="Zona" Relationship="BDToledoModel.FK_Reclamo_Zona" FromRole="Reclamo" ToRole="Zona" />
+        </EntityType>
+        <Association Name="FK_Reclamo_TipoDeReclamo">
+          <End Type="BDToledoModel.TipoDeReclamo" Role="TipoDeReclamo" Multiplicity="0..1" />
+          <End Type="BDToledoModel.Reclamo" Role="Reclamo" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TipoDeReclamo">
+              <PropertyRef Name="NroDeTipoDeReclamo" />
+            </Principal>
+            <Dependent Role="Reclamo">
+              <PropertyRef Name="NroDeTipoDeReclamo" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -341,18 +353,6 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK_UbicacionZona_zona">
-          <End Type="BDToledoModel.Zona" Role="Zona" Multiplicity="1" />
-          <End Type="BDToledoModel.UbicacionZona" Role="UbicacionZona" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Zona">
-              <PropertyRef Name="NroDeZona" />
-            </Principal>
-            <Dependent Role="UbicacionZona">
-              <PropertyRef Name="NroDeZona" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -371,21 +371,6 @@
                 <ScalarProperty Name="FechaDeIngreso" ColumnName="FechaDeIngreso" />
                 <ScalarProperty Name="EstadoDelReclamo" ColumnName="EstadoDelReclamo" />
                 <ScalarProperty Name="FechaDeCambioDeEstado" ColumnName="FechaDeCambioDeEstado" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="Reclamo">
-            <EntityTypeMapping TypeName="BDToledoModel.Reclamo">
-              <MappingFragment StoreEntitySet="Reclamo">
-                <ScalarProperty Name="NroDeReclamo" ColumnName="NroDeReclamo" />
-                <ScalarProperty Name="NombreDeUsuario" ColumnName="NombreDeUsuario" />
-                <ScalarProperty Name="NroDeZona" ColumnName="NroDeZona" />
-                <ScalarProperty Name="NroDeTipoDeReclamo" ColumnName="NroDeTipoDeReclamo" />
-                <ScalarProperty Name="Observacion" ColumnName="Observacion" />
-                <ScalarProperty Name="Longitud" ColumnName="Longitud" />
-                <ScalarProperty Name="Latitud" ColumnName="Latitud" />
-                <ScalarProperty Name="FechaDeIngreso" ColumnName="FechaDeIngreso" />
-                <ScalarProperty Name="EstadoDelReclamo" ColumnName="EstadoDelReclamo" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -441,6 +426,21 @@
                 <ScalarProperty Name="Color" ColumnName="Color" />
                 <ScalarProperty Name="Nombre" ColumnName="Nombre" />
                 <ScalarProperty Name="NroDeZona" ColumnName="NroDeZona" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Reclamo">
+            <EntityTypeMapping TypeName="BDToledoModel.Reclamo">
+              <MappingFragment StoreEntitySet="Reclamo">
+                <ScalarProperty Name="EstadoDelReclamo" ColumnName="EstadoDelReclamo" />
+                <ScalarProperty Name="FechaDeIngreso" ColumnName="FechaDeIngreso" />
+                <ScalarProperty Name="Latitud" ColumnName="Latitud" />
+                <ScalarProperty Name="Longitud" ColumnName="Longitud" />
+                <ScalarProperty Name="Observacion" ColumnName="Observacion" />
+                <ScalarProperty Name="NroDeTipoDeReclamo" ColumnName="NroDeTipoDeReclamo" />
+                <ScalarProperty Name="NroDeZona" ColumnName="NroDeZona" />
+                <ScalarProperty Name="NombreDeUsuario" ColumnName="NombreDeUsuario" />
+                <ScalarProperty Name="NroDeReclamo" ColumnName="NroDeReclamo" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

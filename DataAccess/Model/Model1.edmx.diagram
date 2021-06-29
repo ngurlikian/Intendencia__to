@@ -6,17 +6,17 @@
     <edmx:Diagrams>
       <Diagram DiagramId="f48c6f8f90264cf292af9f32e0a0207d" Name="Diagram1">
         <EntityTypeShape EntityType="BDToledoModel.HistorialReclamo" Width="1.5" PointX="8.75" PointY="1.25" IsExpanded="true" />
-        <EntityTypeShape EntityType="BDToledoModel.Reclamo" Width="1.5" PointX="6" PointY="4.625" IsExpanded="true" />
         <EntityTypeShape EntityType="BDToledoModel.TipoDeReclamo" Width="1.5" PointX="3.75" PointY="0.75" IsExpanded="true" />
         <EntityTypeShape EntityType="BDToledoModel.UbicacionZona" Width="1.5" PointX="3" PointY="10.875" IsExpanded="true" />
-        <AssociationConnector Association="BDToledoModel.FK_Reclamo_TipoDeReclamo" ManuallyRouted="false" />
         <EntityTypeShape EntityType="BDToledoModel.Cuadrilla" Width="1.5" PointX="3" PointY="14.5" />
         <EntityTypeShape EntityType="BDToledoModel.Usuario" Width="1.5" PointX="3.75" PointY="4.875" />
         <EntityTypeShape EntityType="BDToledoModel.Zona" Width="1.5" PointX="0.75" PointY="7.5" />
         <AssociationConnector Association="BDToledoModel.FK_Cuadrilla_Zona" />
+        <AssociationConnector Association="BDToledoModel.FK_UbicacionZona_zona" />
+        <EntityTypeShape EntityType="BDToledoModel.Reclamo" Width="2.125" PointX="6" PointY="3.625" />
+        <AssociationConnector Association="BDToledoModel.FK_Reclamo_TipoDeReclamo" />
         <AssociationConnector Association="BDToledoModel.FK_Reclamo_Usuario" />
         <AssociationConnector Association="BDToledoModel.FK_Reclamo_Zona" />
-        <AssociationConnector Association="BDToledoModel.FK_UbicacionZona_zona" />
         </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

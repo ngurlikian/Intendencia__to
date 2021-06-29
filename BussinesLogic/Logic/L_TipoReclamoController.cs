@@ -39,6 +39,21 @@ namespace BussinesLogic.Logic
             return colErrores;
         }
 
+        public List<string> Validar(dtoTipoDeReclamo  nrotiporeclamo)
+        {
+            List<string> colErrores = new List<string>();
+
+            
+
+            return colErrores;
+        } 
+
+        public List<dtoTipoDeReclamo> getTipoReclamo()
+        {
+            return this._Repository.getTipoReclamoRepository().getTipoReclamo();
+        }
+
+
         public List<string> BorrarTipoReclamo(int nrotiporeclamo)
         {
             List<string> colErrores = this.ValidarBorrado(nrotiporeclamo);
@@ -46,6 +61,18 @@ namespace BussinesLogic.Logic
             if (colErrores.Count == 0)
             {
                 this._Repository.getTipoReclamoRepository().BorrarTipoReclamoRepository(nrotiporeclamo);
+            }
+
+            return colErrores;
+        }
+
+        public List<string> ModificarTipoReclamo(dtoTipoDeReclamo nrotiporeclamo)
+        {
+            List<string> colErrores = this.Validar(nrotiporeclamo);
+
+            if (colErrores.Count == 0)
+            {
+                this._Repository.getTipoReclamoRepository().ModificarTipoReclamo(nrotiporeclamo);
             }
 
             return colErrores;

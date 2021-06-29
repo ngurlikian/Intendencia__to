@@ -51,6 +51,19 @@ namespace DataAccess.Repository
             }
         }
 
+        public List<dtoTipoDeReclamo> getTipoReclamo()
+        {
+            List<dtoTipoDeReclamo> colDtoTipoReclamo = new List<dtoTipoDeReclamo>();
+
+            using (BDToledoEntities context = new BDToledoEntities())
+            {
+                List<TipoDeReclamo> colTipoReclamo = context.TipoDeReclamo.AsNoTracking().Select(s => s).ToList();
+                colDtoTipoReclamo = this.tiporeclamoMapper.MapToDto(colTipoReclamo);
+            }
+
+            return colDtoTipoReclamo;
+        }
+
         public void BorrarTipoReclamoRepository(int nrotipodereclamo)
         {
             using (BDToledoEntities context = new BDToledoEntities())

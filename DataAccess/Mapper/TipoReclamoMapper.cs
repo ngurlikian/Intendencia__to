@@ -19,5 +19,31 @@ namespace DataAccess.Mapper
             return entity;
         }
 
+
+
+        public List<dtoTipoDeReclamo> MapToDto(List<TipoDeReclamo> colEntity)
+        {
+            List<dtoTipoDeReclamo> colDto = new List<dtoTipoDeReclamo>();
+            foreach (TipoDeReclamo item in colEntity)
+            {
+                dtoTipoDeReclamo dto = this.MapToEntityAToDto(item);
+                colDto.Add(dto);
+            }
+
+            return colDto;
+        }
+
+        public dtoTipoDeReclamo MapToEntityAToDto(TipoDeReclamo entity)
+        {
+            dtoTipoDeReclamo dto = null;
+            if (entity != null)
+            {
+                dto = new dtoTipoDeReclamo();
+                dto.NroDeTipoDeReclamo = entity.NroDeTipoDeReclamo;
+                dto.Nombre = entity.Nombre;
+                dto.Descripción = entity.Descripción;
+            }
+            return dto;
+        }
     }
 }

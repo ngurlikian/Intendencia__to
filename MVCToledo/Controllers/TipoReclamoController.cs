@@ -21,5 +21,29 @@ namespace MVCToledo.Controllers
             tiporeclamoController.AgregarTipoReclamo(dto);
             return View("Agregar");
         }
+
+        public ActionResult Lista()
+        {
+            L_TipoReclamoController tipoReclamoController = new L_TipoReclamoController();
+            List<dtoTipoDeReclamo> colDataModel = tipoReclamoController.getTipoReclamo();
+
+            return View(colDataModel);
+        }
+
+        public ActionResult Eliminar(int NroDeTipoDeReclamo)
+        {
+            L_TipoReclamoController tipoReclamoController = new L_TipoReclamoController();
+            List<string> colErrores = tipoReclamoController.BorrarTipoReclamo(NroDeTipoDeReclamo);
+
+            return RedirectToAction("Lista");
+        }
+
+        public ActionResult Modificar(dtoTipoDeReclamo NroDeTipoDeReclamo)
+        {
+            L_TipoReclamoController tipoReclamoController = new L_TipoReclamoController();
+            List<string> colErrores = tipoReclamoController.ModificarTipoReclamo(NroDeTipoDeReclamo);
+
+            return RedirectToAction("Lista");
+        }
     }
 }

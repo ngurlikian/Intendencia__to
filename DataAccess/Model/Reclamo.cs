@@ -17,10 +17,10 @@ namespace DataAccess.Model
         public int NroDeReclamo { get; set; }
         public string NombreDeUsuario { get; set; }
         public int NroDeZona { get; set; }
-        public int NroDeTipoDeReclamo { get; set; }
+        public Nullable<int> NroDeTipoDeReclamo { get; set; }
         public string Observacion { get; set; }
-        public decimal Longitud { get; set; }
-        public decimal Latitud { get; set; }
+        public Nullable<decimal> Longitud { get; set; }
+        public Nullable<decimal> Latitud { get; set; }
         public System.DateTime FechaDeIngreso { get; set; }
         public string EstadoDelReclamo { get; set; }
     

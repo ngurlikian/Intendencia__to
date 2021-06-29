@@ -29,6 +29,9 @@ namespace DataAccess.Repository
                     try
                     {
                         Reclamo reclamoentity = this.reclamoMapper.mapDtoReclamoToEntity(dto);
+                        dto.NroDeZona = 1;
+                        dto.FechaDeIngreso = DateTime.Now;
+                        dto.EstadoDelReclamo = "Pendiente";
                         context.Reclamo.Add(reclamoentity);
                         context.SaveChanges();
                         trann.Commit();

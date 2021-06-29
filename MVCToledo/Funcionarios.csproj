@@ -173,6 +173,7 @@
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Cuadrilla\Agregar.cshtml" />
     <Content Include="Views\TipoReclamo\Agregar.cshtml" />
+    <Content Include="Views\TipoReclamo\Lista.cshtml" />
     <Content Include="Views\Cuadrilla\Lista.cshtml" />
   </ItemGroup>
   <ItemGroup>

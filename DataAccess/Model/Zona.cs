@@ -18,8 +18,8 @@ namespace DataAccess.Model
         public Zona()
         {
             this.Cuadrilla = new HashSet<Cuadrilla>();
-            this.Reclamo = new HashSet<Reclamo>();
             this.UbicacionZona = new HashSet<UbicacionZona>();
+            this.Reclamo = new HashSet<Reclamo>();
         }
     
         public int NroDeZona { get; set; }
@@ -30,8 +30,8 @@ namespace DataAccess.Model
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Cuadrilla> Cuadrilla { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Reclamo> Reclamo { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<UbicacionZona> UbicacionZona { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Reclamo> Reclamo { get; set; }
     }
 }

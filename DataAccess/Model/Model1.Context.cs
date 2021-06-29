@@ -26,11 +26,11 @@ namespace DataAccess.Model
         }
     
         public virtual DbSet<HistorialReclamo> HistorialReclamo { get; set; }
-        public virtual DbSet<Reclamo> Reclamo { get; set; }
         public virtual DbSet<TipoDeReclamo> TipoDeReclamo { get; set; }
         public virtual DbSet<UbicacionZona> UbicacionZona { get; set; }
         public virtual DbSet<Cuadrilla> Cuadrilla { get; set; }
         public virtual DbSet<Usuario> Usuario { get; set; }
         public virtual DbSet<Zona> Zona { get; set; }
+        public virtual DbSet<Reclamo> Reclamo { get; set; }
     }
 }
