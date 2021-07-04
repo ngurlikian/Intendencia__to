@@ -20,7 +20,7 @@ namespace BussinesLogic.Logic
 
         public List<string> AgregarUsuario(dtoUsuario dto)
         {
-            List<string> colErrores = new List<string>();
+            List<string> colErrores = this.ValidarAgregar(dto.NombreDeUsuario);
             if (colErrores.Count() == 0)
             {
                 dto.Funcionario = "No";
@@ -40,6 +40,34 @@ namespace BussinesLogic.Logic
             }
 
             return colErrores;
+        }
+
+        public List<string> ValidarAgregar(string nombredeusuario)
+        {
+            List<string> colErrores = new List<string>();
+
+            if (this._Repository.getUsuarioRepository().ExisteUsuarioRepository(nombredeusuario))
+            {
+                colErrores.Add("El usuario ya existe");
+            }
+
+            return colErrores;
+        }
+
+        public dtoUsuario getUsuarioLogeado(string user)
+        {
+            return this._Repository.getUsuarioRepository().getUsuarioLogeadoRepository(user);
+        }
+
+        public bool ValidarLogin (string nombreusuario, string contraseña)
+        {
+            bool correcto = false;
+            if (this._Repository.getUsuarioRepository().ExisteUsuarioRepository(nombreusuario) && this._Repository.getUsuarioRepository().getEstado(nombreusuario) == "A" && this._Repository.getUsuarioRepository().getLogin(nombreusuario) == contraseña)
+            {
+                correcto = true;
+            }
+
+            return correcto;
         }
 
         public List<string> BorrarUsuario(string nombredeusuario)

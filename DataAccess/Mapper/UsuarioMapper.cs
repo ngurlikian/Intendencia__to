@@ -20,9 +20,28 @@ namespace DataAccess.Mapper
             entity.Contraseña = dto.Contraseña;
             entity.Funcionario = dto.Funcionario;
             entity.CorreoElectronico = dto.CorreoElectronico;
-            entity.Contraseña = dto.Contraseña;
             entity.Estado = dto.Estado;
             return entity;
+        }
+
+
+
+        public dtoUsuario MapToEntityAToDto(Usuario entity)
+        {
+            dtoUsuario dto = null;
+            if (entity != null)
+            {
+                dto = new dtoUsuario();
+                dto.NombreDeUsuario = entity.NombreDeUsuario;
+                dto.Nombre = entity.Nombre;
+                dto.Apellido = entity.Apellido;
+                dto.Contraseña = entity.Contraseña;
+                dto.CorreoElectronico = entity.CorreoElectronico;
+                dto.Telefono = entity.Telefono;
+                dto.Estado = entity.Estado;
+                dto.Funcionario = entity.Funcionario;
+            }
+            return dto;
         }
 
     }

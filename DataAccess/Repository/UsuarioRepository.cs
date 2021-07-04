@@ -31,6 +31,43 @@ namespace DataAccess.Repository
             return existe;
         }
 
+        public string getLogin(string nombredeusuario)
+        {
+            string contra;
+            using (BDToledoEntities context = new BDToledoEntities())
+            {
+                Usuario EsteUsuario = context.Usuario.AsNoTracking().FirstOrDefault(f => f.NombreDeUsuario == nombredeusuario);
+                contra = EsteUsuario.Contraseña;
+
+            }
+            return contra;
+        }
+
+        public string getEstado(string nombredeusuario)
+        {
+            string estado;
+            using (BDToledoEntities context = new BDToledoEntities())
+            {
+                Usuario EsteUsuario = context.Usuario.AsNoTracking().FirstOrDefault(f => f.NombreDeUsuario == nombredeusuario);
+                estado = EsteUsuario.Estado;
+
+            }
+            return estado;
+        }
+
+
+        public dtoUsuario getUsuarioLogeadoRepository(string user)
+        {
+            dtoUsuario dto = new dtoUsuario();
+
+            using (BDToledoEntities context = new BDToledoEntities())
+            {
+                Usuario esteUsuario = context.Usuario.FirstOrDefault(f => f.NombreDeUsuario == user);
+                dto = this.usuarioMapper.MapToEntityAToDto(esteUsuario);
+            }
+            return dto;
+        }
+
         public void AgregarUsuarioRepository(dtoUsuario dto)
         {
             using (BDToledoEntities context = new BDToledoEntities())

@@ -1,0 +1,59 @@
+﻿@model  CommonSolution.DTO.dtoUsuario
+
+@{
+    ViewBag.Title = "Lista";
+}
+
+<h2>Lista</h2>
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.NombreDeUsuario)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Nombre)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Apellido)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Telefono)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Contraseña)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CorreoElectronico)
+        </th>
+        <th></th>
+    </tr>
+
+
+    <tr>
+        <td>
+            @Html.DisplayFor(model => model.NombreDeUsuario)
+        </td>
+        <td>
+            @Html.DisplayFor(model => model.Nombre)
+        </td>
+        <td>
+            @Html.DisplayFor(model => model.Apellido)
+        </td>
+        <td>
+            @Html.DisplayFor(model => model.Telefono)
+        </td>
+        <td>
+            @Html.DisplayFor(model => model.Contraseña)
+        </td>
+        <td>
+            @Html.DisplayFor(model => model.CorreoElectronico)
+        </td>
+        <td>
+            @Html.ActionLink("Eliminar", "Eliminar") 
+            @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
+        </td>
+    </tr>
+
+
+</table>

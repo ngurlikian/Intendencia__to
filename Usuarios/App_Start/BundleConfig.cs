@@ -25,7 +25,11 @@ namespace Usuarios
             bundles.Add(new StyleBundle("~/Content/css").Include(
                       "~/Content/bootstrap.css",
                       "~/Content/site.css"));
- 
+
+            bundles.Add(new ScriptBundle("~/bundles/reclamo").Include(
+                     "~/Scripts/map.js"
+                     ));
+
         }
     }
     

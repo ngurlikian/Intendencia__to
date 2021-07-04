@@ -42,9 +42,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Constantes\CLogin.cs" />
     <Compile Include="Constantes\Estado.cs" />
     <Compile Include="DTO\dtoCuadrilla.cs" />
     <Compile Include="DTO\dtoHistorialReclamo.cs" />
+    <Compile Include="DTO\dtoLogin.cs" />
     <Compile Include="DTO\dtoReclamo.cs" />
     <Compile Include="DTO\dtoTipoDeReclamo.cs" />
     <Compile Include="DTO\dtoUbicacionZona.cs" />
